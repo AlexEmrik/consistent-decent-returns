@@ -25,11 +25,7 @@ The ETF data is downloaded from Yahoo Finance and the risk free rate from FRED, 
 
 Steps 3-5 are wrapped by `zsh scripts/setup.zsh`.
 
-As is, there are two separate but related projects within this repository:
-
-1. Identifying simple portfolio strategies that yield greater returns than a 60/40 portfolio (with small drawdowns).
-2. Using machine learning methods to generate alphas for use in a modern Markowitz-at-seventy portfolio construction method.
-
+The focus here is identifying simple portfolio strategies that yield greater returns than a 60/40 portfolio, with small drawdowns.
 ---
 
 ## Project Structure
@@ -45,7 +41,6 @@ decent_returns
 │   └── vis.py           # Visualization helpers
 ├── scripts/
 │   ├── download.py      # Download raw data + build the risk model
-│   ├── alphas.py        # Generate alpha signal files
 │   ├── universes.py     # Generate asset universe files
 │   ├── run.py           # Run backtests (--all / -f)
 │   ├── env.zsh          # Export FRED_API_KEY from keys/fred_api.key
