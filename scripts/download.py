@@ -71,8 +71,6 @@ print("Saved ffr.parquet")
 
 # ── Stage 2: Full-universe risk model ─────────────────────────────────────────
 
-# print("\n=== Stage 2: Building full-universe risk model ===")
-
 proc_data_dir = Path("data/processed")
 proc_data_dir.mkdir(parents=True, exist_ok=True)
 
