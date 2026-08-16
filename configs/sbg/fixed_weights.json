@@ -1,0 +1,3 @@
+{
+    "SPY60_AGG40":       {"rebal_freq": "M", "alphas": "6040",   "risk_model": "K10", "asset_universes": ["SPY", "AGG"],                       "optimizer_params": {"method": "fixed_weight"}}
+}

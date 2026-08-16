@@ -1,0 +1,5 @@
+{
+    "sect": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["XLK", "XLV", "XLF", "XLY", "XLI", "XLP", "XLE", "XLU", "XLB", "IBB", "IYR"],             "optimizer_params": {"method": "min_vol",                  "target_vol": 100, "asset_dd_limit": 0.20}},
+    "bond": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["AGG", "TLT", "IEF", "TIP", "LQD", "LQDH", "HYG", "MUB", "BNDX", "EMB", "IAGG", "VWOB"],  "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 100, "asset_dd_limit": 0.20}},
+    "gold": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["GLD"],                                                                                   "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 100}}
+}

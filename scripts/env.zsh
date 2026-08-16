@@ -1,0 +1,1 @@
+export FRED_API_KEY=$(cat ./keys/fred_api.key)
