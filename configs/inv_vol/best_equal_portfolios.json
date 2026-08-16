@@ -1,8 +1,0 @@
-{
-    "QQQ IEF GLD":         {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["QQQ", "IEF", "GLD"],         "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "QQQ XLP TLT GLD":     {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["QQQ", "XLP", "TLT", "GLD"],  "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "QQQ XLP IEF TIP GLD": {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["QQQ", "XLP", "IEF", "TIP", "GLD"],  "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "XLK XLV GLD":         {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["XLK", "XLV", "GLD"],  "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "QQQ XLU AGG GLD":     {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["QQQ","XLU", "AGG", "GLD"],  "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "SPY QQQ XLP TLT GLD": {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "QQQ", "XLP", "TLT", "GLD"],  "optimizer_params": {"method": "inv_vol", "target_vol": 100}}
-}

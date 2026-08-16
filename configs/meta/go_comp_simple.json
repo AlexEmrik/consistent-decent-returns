@@ -1,7 +1,0 @@
-{
-    "mrkt": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["SPY", "QQQ", "VTV", "VUG", "MDY", "IWM", "SCHD", "USMV", "QUAL"],                           "optimizer_params": {"method": "min_vol", "target_vol": 100}},
-    "sect": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["XLK", "XLV", "XLF", "XLY", "XLI", "XLP", "XLE", "XLU", "XLB", "IBB", "IYR"],                "optimizer_params": {"method": "min_vol", "target_vol": 100}},
-    "bond": {"rebal_freq": "MDD", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["AGG", "TLT", "IEF", "TIP", "LQD", "LQDH", "HYG", "MUB", "BNDX", "EMB", "IAGG", "VWOB"],     "optimizer_params": {"method": "fixed_weight", "asset_dd_limit": 0.20}},
-    "cmdy": {"rebal_freq": "M", "alphas": "ma50",         "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["SLV", "CPER", "USO", "UGA", "CORN", "WEAT", "SOYB", "CANE"],                                "optimizer_params": {"method": "markowitz70", "target_vol": 100, "t_lim": 0.5, "asset_t_lim": 1}},
-    "gold": {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["GLD"],                                                                                      "optimizer_params": {"method": "fixed_weight"}}
-}

@@ -1,5 +1,0 @@
-{
-    "qqq_tlt_gld_fw":      {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["QQQ", "TLT", "GLD"], "optimizer_params": {"method": "fixed_weight"}},
-    "qqq_tlt_gld_rp":      {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["QQQ", "TLT", "GLD"], "optimizer_params": {"method": "risk_parity", "target_vol": 100, "kappa_risk": 0.00001}},
-    "qqq_tlt_gld_fw_vc8":  {"rebal_freq": "M", "alphas": "equal_alphas", "uncertainties": "no_uncertainty", "risk_model": "full_K10", "asset_universes": ["QQQ", "TLT", "GLD"], "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 0.08}}
-}

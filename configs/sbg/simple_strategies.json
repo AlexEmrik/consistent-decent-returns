@@ -1,7 +1,0 @@
-{
-    "sbg_fixed_weights_vc8_k10": {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],                           "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 0.08}},
-    "sbg_inv_vol_k10":           {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],                           "optimizer_params": {"method": "inv_vol", "target_vol": 100}},
-    "sbg_max_div_k10":           {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],                           "optimizer_params": {"method": "max_diversification", "target_vol": 100}},
-    "sbg_min_vol_k10":           {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],                           "optimizer_params": {"method": "min_vol", "target_vol": 100}},
-    "sbg_risk_parity_k10":       {"rebal_freq": "M", "alphas": "equal",  "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],                           "optimizer_params": {"method": "risk_parity", "target_vol": 100, "kappa_risk": 0.00005}}
-}

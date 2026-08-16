@@ -1,0 +1,6 @@
+{
+    "SPY_vc8":                      {"rebal_freq": "M", "alphas": "equal", "risk_model": "K10", "asset_universes": ["SPY"],                       "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 0.08}},
+    "6040":                         {"rebal_freq": "M", "alphas": "6040",  "risk_model": "K10", "asset_universes": ["SPY", "AGG"],                "optimizer_params": {"method": "fixed_weight"}},
+    "SBG":                          {"rebal_freq": "M", "alphas": "equal", "risk_model": "K10", "asset_universes": ["SPY", "AGG", "GLD"],         "optimizer_params": {"method": "fixed_weight_vol_control", "target_vol": 100}},
+    "Maximum_div":                  {"rebal_freq": "M", "alphas": "equal", "risk_model": "K10", "asset_universes": ["SPY", "TLT", "GLD", "IBIT"], "optimizer_params": {"method": "max_diversification", "target_vol": 100}}
+}
