@@ -1,4 +1,4 @@
-# decent_returns
+# consistent_decent_returns
 
 Long only portfolio optimization to achieve consistent, decent returns via convex optimization.
 
