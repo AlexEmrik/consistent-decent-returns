@@ -1,6 +1,5 @@
-# Makefile for the paper project template
-# This Makefile provides commands for setting up the development environment,
-# compiling LaTeX documents, and maintaining code quality.
+# This Makefile provides commands for setting up the development environment
+# and compiling LaTeX documents.
 
 # Set the default target to 'help' when running make without arguments
 .DEFAULT_GOAL := help
@@ -23,17 +22,3 @@ help:  ## Display this help screen
 .PHONY: setup
 setup: ## create a virtual environment
 	@uv sync
-	@uv run pre-commit install
-
-
-# Mark 'fmt' as a phony target
-.PHONY: fmt
-fmt: ## Run autoformatting and linting
-	@uv run ruff format
-	@uv run ruff check
-
-
-# Mark 'lint-critical' as a phony target
-.PHONY: lint-critical
-lint-critical: ## run the critical linting
-	@uv run ruff check --select=F,E,B,S,PERF,TRY,I,T100 --exit-non-zero-on-fix --force-exclude

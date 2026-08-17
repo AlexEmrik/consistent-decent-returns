@@ -1,33 +1,34 @@
-# consistent_decent_returns
+# Consistent Decent Returns
 
 Long only portfolio optimization to achieve consistent, decent returns via convex optimization.
 
----
 
-## Some notes
+## Setup instructions
 
-The ETF data is downloaded from Yahoo Finance and the risk free rate from FRED, using `scripts/download.py`.
+1. Run the following command to install `uv`.
+```bash
+make uv              # Install uv
+make setup           # Setup the project venv
+```
 
-`data/`, `results/` and `keys/` are gitignored, so a fresh clone contains no data. Run the download step yourself.
+2. Create a file to store your FRED API key required to download the data. Get your key at [FRED API key](https://fred.stlouisfed.org/docs/api/api_key.html).
+```bash
+mkdir keys
+touch keys/fred_api.key
+cat > [YOUR KEY HERE]
+```
 
-## Core workflow
+3. Run the setup scripts with the following command. 
+```bash
+source scripts/setup.zsh
+```
 
-0. If you don't have uv installed, run `make uv` to install it. We use `uv` to manage the Python environment.
-1. Run `make setup` to set up the Python environment and install the pre-commit hooks (keeps code quality high).
-2. Add your [FRED API key](https://fred.stlouisfed.org/docs/api/api_key.html) to `keys/fred_api.key`:
-   ```bash
-   echo YOUR_KEY > keys/fred_api.key
-   ```
-3. Run `source scripts/env.zsh` to export `FRED_API_KEY` into your shell.
-4. Run `uv run python scripts/download.py` once to download the raw data and compute the factor risk model.
-5. Run `uv run python scripts/alphas.py` and `uv run python scripts/universes.py` to build the alpha signals and asset universes.
-6. Define backtests as JSON config files, then run them with `uv run python scripts/run.py`. Use `--all` for everything, or `-f <file>` for a single config.
+4. Define backtests as JSON files under `./configs`, then run them with the following command
+```bash
+uv run python scripts/run.py -f configs/path/to/config.json
+```
 
-Steps 3-5 are wrapped by `zsh scripts/setup.zsh`.
 
-The focus here is identifying simple portfolio strategies that yield greater returns than a 60/40 portfolio, with small drawdowns.
-
----
 
 ## Project Structure
 
@@ -42,17 +43,11 @@ decent_returns
 │   └── vis.py           # Visualization helpers
 ├── scripts/
 │   ├── download.py      # Download raw data + build the risk model
-│   ├── universes.py     # Generate asset universe files
+│   ├── universes.py     # Generate asset universe file
+│   ├── mask.py          # Generate asset mask file
+│   ├── alphas.py        # Generate alpha files
 │   ├── run.py           # Run backtests (--all / -f)
 │   ├── env.zsh          # Export FRED_API_KEY from keys/fred_api.key
 │   └── setup.zsh        # End to end data setup
 └── data/                # Data, processed and raw
-```
-
-## Makefile commands
-
-```bash
-make uv              # Install uv
-make setup           # Setup the project venv and install pre-commit hooks
-make fmt             # Run autoformatting and linting
 ```
