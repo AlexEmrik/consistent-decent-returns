@@ -1,4 +1,3 @@
-# Simple SIGMA
 import pandas as pd
 import numpy as np 
 from decent_returns.config import _1M, _1Y

@@ -23,7 +23,7 @@ cat > [YOUR KEY HERE]
 source scripts/setup.zsh
 ```
 
-4. Define backtests as JSON files under `./configs`, then run them with the following command
+5. Define backtests as JSON files under `./configs`, then run them with the following command
 ```bash
 uv run python scripts/run.py -f configs/path/to/config.json
 ```
