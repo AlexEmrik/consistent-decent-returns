@@ -3,6 +3,8 @@ source scripts/env.zsh
 
 uv run python scripts/download.py
 
-uv run python scripts/alphasscri.py
+uv run python scripts/alphas.py
 
 uv run python scripts/universes.py
+
+uv run python scripts/mask.py

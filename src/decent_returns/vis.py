@@ -53,16 +53,15 @@ def _(
     backtests = [_f.stem for _f in res_path.glob("*.pkl")]
     results = {_bt: load_bt_results(_bt) for _bt in backtests}
     fed_funds_rate = load_fed_funds_rate().loc[start_date:end_date, "FFR"]
-    cpi = load_inflation_data().loc[start_date:end_date, "CPI"] - 1.0
 
     _bench_px = load_asset_close_prices().loc[start_date:end_date, ["SPY", "AGG", "GLD"]]
     bench_returns = _bench_px.pct_change().dropna()
 
-    return cpi, fed_funds_rate, results, bench_returns
+    return fed_funds_rate, results, bench_returns
 
 
 @app.cell
-def _(bench_returns, cpi, fed_funds_rate, np, pd, results, asset_mask):
+def _(bench_returns, fed_funds_rate, np, pd, results, asset_mask):
     results_frame = pd.DataFrame(
         columns=[
             "Return",

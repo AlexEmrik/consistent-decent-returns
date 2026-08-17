@@ -8,13 +8,12 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 
-[tool.marimo.runtime]
-output_max_bytes = 20_000_000
-
 dependencies = [
     "cvxcovariance>=0.1.9",
     "cvxpy>=1.7.3",
     "fastparquet>=2024.11.0",
+    "fredapi>=0.5.2",
+    "lightgbm>=4.6.0",
     "marimo>=0.17.0",
     "matplotlib>=3.10.7",
     "numpy>=2.2.6",
@@ -30,18 +29,15 @@ dependencies = [
     "tqdm>=4.67.1",
     "typer>=0.20.0",
     "yfinance>=0.2.66",
-    "lightgbm>=4.6.0",
-    "fredapi>=0.5.2",
 ]
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.3.0",
-    "pre-commit-hooks>=6.0.0",
-    "ruff>=0.14.0",
     "seaborn>=0.13.0",
-    "lightgbm>=4.6.0",
 ]
+
+[tool.marimo.runtime]
+output_max_bytes = 20_000_000
 
 [build-system]
 requires = ["hatchling"]
@@ -49,13 +45,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/decent_returns"]
-
-[tool.bandit]
-exclude_dirs = ["tests"]
-
-[tool.deptry]
-# see https://deptry.com/usage/#pep-621-dev-dependency-groups
-pep621_dev_dependency_groups = ["dev"]
 
 # ---------------
 # Testing
@@ -72,76 +61,3 @@ source = ["src/decent_returns"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
-
-# ---------------
-# Linting
-# ---------------
-
-[tool.ruff]
-target-version = "py313"
-line-length = 110
-extend-exclude = [
-    ".git",
-    ".venv",
-    "notebooks",
-    "paper",
-    "data",
-    ".venv",
-    "__marimo__",
-    "__pycache__",
-    "build",
-    "dist",
-    "ic_portfolio.py",
-    "ic_portfolio_real_signal.py",
-    "deprecated",
-    "exploration",
-]
-fix = true
-show-fixes = true
-
-[tool.ruff.lint]
-select = ["ALL"]
-ignore = [
-    "COM812",    #Ignore COM812 (missing trailing comma)
-    "D203",      #Ignore D203 (one blank line after class definition before docstring)
-    "D213",      #Ignore D213 (checks for multiline summary in second line of docstrings)
-    "EXE002",    #Ignore EXE002 (checks for shebang in executable python files)
-    "INP001",    #Ignore INP001 (checks for missing __init__.py files)
-    "PT",        #Ignore PT (pytest style conventions)
-    "PLR0913",   #Ignore PLR0913 (checks for too many arguments in functions)
-    "N802",      #Ignore N802 (afunction name should use snake_case)
-    "N803",      #Ignore N803 (argument names must be snake_case)
-    "N806",      #Ignore N806 (non-lowercase variable names in functions)
-    "ERA001",    #Ignore ERA001 (checks for commented out code)
-    "T201",      #Ignore T201 (bans print statements)
-    "C901",      #Ignore C901 (functions with too much indentation)
-    "EM101",     #Ignore EM101 (raw string in raise exception)
-    "EM102",     #Ignore EM102 (f-string in raise exception)
-    "TRY003",    #Ignore TRY003 (long exception messages that are not defined in the exception class)
-    "TD",        #Ignore TD (TODO format conventions)
-    "FBT",       #Ignore FBT (flake8 boolean trap (boolean args in functions))
-    "PLR0915",   #Ignore PLR0915 (too many statements in function)
-    "RET504",    #Ignore RET504 (assignment immediately before return)
-    "PD004",     #Ignore PD004 (prefer notna over notnull)
-]
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?)?)$"
-
-# Docstring style configuration
-[tool.ruff.lint.pydocstyle]
-convention = "google"
-
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["ARG", "S101"]
-"notebooks/*" = ["E402"]
-"scripts/*" = ["S101", "D100", "D103"]          # scripts don't need docstrings
-"src/decent_returns/alpha/*" = ["S101", "PD011"] # asserts fine in numerical code
-
-[tool.ruff.lint.isort]
-known-first-party = ["decent_returns"]
-section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
-
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "space"
-skip-magic-trailing-comma = false
-line-ending = "auto"
