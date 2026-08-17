@@ -15,7 +15,7 @@ make setup           # Setup the project venv
 ```bash
 mkdir keys
 touch keys/fred_api.key
-cat > [YOUR KEY HERE]
+echo "yourkey123" > keys/fred_api.key
 ```
 
 3. Run the setup scripts with the following command. 
